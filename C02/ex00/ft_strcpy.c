@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vimunoz- <vimunoz-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 20:47:04 by vimunoz-          #+#    #+#             */
-/*   Updated: 2022/07/14 12:59:09 by vimunoz-         ###   ########.fr       */
+/*   Created: 2022/07/15 11:00:55 by vimunoz-          #+#    #+#             */
+/*   Updated: 2022/07/18 19:50:25 by vimunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
 
-void	ft_print_alphabet(void)
+#include <unistd.h>
+
+char	*ft_strcpy(char *dest, char *src)
 {
-	char	c;
+	int	i;
 
-	c = 'a';
-	while (c <= 'z')
+	i = 0;
+	while (src[i] != '\0')
 	{
-		write (1, &c, 1);
-		c++;
-	}
+		dest[i] = src[i];
+		i++;
+	}	
+	dest[i] = '\0';
+	return (dest);
 }

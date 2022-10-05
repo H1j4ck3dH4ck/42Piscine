@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vimunoz- <vimunoz-@student.42barcel>       +#+  +:+       +#+        */
+/*   By: ygarreta <ygarreta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 20:47:04 by vimunoz-          #+#    #+#             */
-/*   Updated: 2022/07/14 12:59:28 by vimunoz-         ###   ########.fr       */
+/*   Created: 2022/07/08 12:34:51 by ygarreta          #+#    #+#             */
+/*   Updated: 2022/07/17 10:11:36 by vimunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	char	c;
-
-	c = 'z';
-	while (c >= 'a')
-	{
-		write (1, &c, 1);
-		c--;
-	}
+	write(1, &c, 1);
 }

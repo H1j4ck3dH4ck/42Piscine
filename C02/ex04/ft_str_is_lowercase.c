@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vimunoz- <vimunoz-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 10:25:28 by vimunoz-          #+#    #+#             */
-/*   Updated: 2022/07/13 16:16:44 by vimunoz-         ###   ########.fr       */
+/*   Created: 2022/07/18 10:19:13 by vimunoz-          #+#    #+#             */
+/*   Updated: 2022/07/18 19:51:13 by vimunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <unistd.h>
 
-void	ft_is_negative(int n)
-
+int	ft_str_is_lowercase(char *str)
 {
-	char	pos;
-	char	neg;
+	int	c;
 
-	pos = 'P';
-	neg = 'N';
-	if (n < 0)
+	c = 0;
+	while (str[c] != '\0')
 	{
-		write(1, &neg, 1);
+		if ((str[c] < 'a') || (str[c] > 'z'))
+			return (0);
+		c++;
 	}
-	else
-	{
-		write(1, &pos, 1);
-	}
+	return (1);
 }

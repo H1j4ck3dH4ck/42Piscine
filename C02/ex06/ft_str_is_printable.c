@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vimunoz- <vimunoz-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 11:15:55 by vimunoz-          #+#    #+#             */
-/*   Updated: 2022/07/14 12:58:39 by vimunoz-         ###   ########.fr       */
+/*   Created: 2022/07/18 10:56:15 by vimunoz-          #+#    #+#             */
+/*   Updated: 2022/07/20 18:45:40 by vimunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-void	ft_putchar(char c)
+int	ft_str_is_printable(char *str)
 {
-	write(1, &c, 1);
+	int	c;
+
+	c = 0;
+	while (str[c] != '\0')
+	{
+		if ((str[c] < 32) || (str[c] > 126))
+			return (0);
+		c++;
+	}
+	return (1);
 }

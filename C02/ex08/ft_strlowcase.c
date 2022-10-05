@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vimunoz- <vimunoz-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 09:42:54 by vimunoz-          #+#    #+#             */
-/*   Updated: 2022/07/26 13:55:58 by vimunoz-         ###   ########.fr       */
+/*   Created: 2022/07/18 11:55:07 by vimunoz-          #+#    #+#             */
+/*   Updated: 2022/07/18 19:46:47 by vimunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-void	ft_print_numbers(void)
-
+char	*ft_strlowcase(char *str)
 {
-	char	a;
+	int	c;
 
-	a = '0';
-	while (a <= '9')
+	c = 0;
+	while (str[c] != '\0')
 	{
-		write (1, &a, 1);
-		a++;
+		if ((str[c] >= 'A') && (str[c] <= 'Z'))
+			str[c] -= 'A' - 'a';
+		c++;
 	}
+	return (str);
 }
